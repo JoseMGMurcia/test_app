@@ -8,12 +8,10 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  app : AppComponent;
-  private ts: TranslateService
+  app: AppComponent;
+  private ts: TranslateService;
   constructor(app: AppComponent) {
     this.app = app;
     this.ts = app.translate;
   }
-
 }
