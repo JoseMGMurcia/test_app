@@ -1,6 +1,6 @@
 {
-        "PASSWORD": "Contraseña", 
-        "MAIL": "Email",
-        "REMEMBER": "Recordar",
-        "ACCESS": "Acceder"
+  "PASSWORD": "Contraseña",
+  "MAIL": "Email",
+  "REMEMBER": "Recordar",
+  "ACCESS": "Acceder"
 }

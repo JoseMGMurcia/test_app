@@ -1,6 +1,6 @@
 {
-    "PASSWORD": "Passworld", 
-    "MAIL": "Email",
-    "REMEMBER": "Remember",
-    "ACCESS": "Access"
+  "PASSWORD": "Password",
+  "MAIL": "Email",
+  "REMEMBER": "Remember",
+  "ACCESS": "Access"
 }

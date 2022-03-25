@@ -7,8 +7,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpClientModule, HttpClient} from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { createTranslateLoader } from './utils/translator.utils';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,17 +20,13 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
-        provide: TranslateLoader, 
-        useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
-    })
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
