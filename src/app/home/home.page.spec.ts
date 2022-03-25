@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 import { HomePage } from './home.page';
 
