@@ -1,20 +1,35 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { TestBed, waitForAsync } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
+import { AVALIABLE_LANGUAJES } from './const';
+
+let app: AppComponent;
+let fixture: ComponentFixture<AppComponent>;
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [TranslateModule.forRoot()],
       declarations: [AppComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-  // TODO: add more tests!
+
+  it('should inicialice translatemodule', () => {
+    expect(app.translate).toBeDefined();
+  });
+
+  it('translator should translate a string using a key', () => {
+    app.translate.setTranslation(AVALIABLE_LANGUAJES[0], { text: 'Translated text' });
+    app.translate.use(AVALIABLE_LANGUAJES[0]);
+    const translatedText = app.translate.instant('text');
+    expect(translatedText).toEqual('Translated text');
+  });
 });
