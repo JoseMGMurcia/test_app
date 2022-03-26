@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { AppComponent } from '../app.component';
 
 import { HomePage } from './home.page';
 
@@ -10,8 +11,17 @@ describe('HomePage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [HomePage],
-      imports: [IonicModule.forRoot()],
+      declarations: [
+        AppComponent,
+        HomePage
+      ],
+      imports: [
+        IonicModule.forRoot(),
+        TranslateModule.forRoot()
+      ],
+      providers:[
+        AppComponent
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);

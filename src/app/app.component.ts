@@ -12,7 +12,7 @@ export class AppComponent {
     this.initializeApp();
   }
 
-  async initializeApp() {
+  initializeApp() {
     const devideLanguaje = window.navigator.language
       .substring(0, 2)
       .toLowerCase();
