@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HomePageRoutingModule } from './home-routing.module';
 import { createTranslateLoader } from '../utils/translator.utils';
+import { LoginComponent } from '../login/login.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,9 @@ import { createTranslateLoader } from '../utils/translator.utils';
       },
     }),
   ],
-  declarations: [HomePage],
+  declarations: [
+    HomePage,
+    LoginComponent
+  ]
 })
 export class HomePageModule {}

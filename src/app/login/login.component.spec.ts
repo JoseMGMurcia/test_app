@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-
+import { TranslateModule } from '@ngx-translate/core';
 import { LoginComponent } from './login.component';
 
 describe('LoginComponent', () => {
@@ -13,10 +12,9 @@ describe('LoginComponent', () => {
       declarations: [ LoginComponent ],
       imports: [
         IonicModule.forRoot(),
-        TranslateModule.forRoot()  
+        TranslateModule.forRoot()
       ]
     }).compileComponents();
-
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
