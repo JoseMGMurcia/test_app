@@ -1,10 +1,7 @@
-@use '/app/styles/variables'
-$gray: #444444;
-$lgray: #888888;
-$lightergray: #adacac;
+@use '../styles/variables.scss' as *;
 
 .main {
-    color: $gray;
+    color: #444444;
     background-color: $white;
     text-align: start;
 }
@@ -20,7 +17,7 @@ $lightergray: #adacac;
 ion-icon {
     margin-left: 5%;
     align-self: center;
-    color: $lgray;
+    color: #888888;
 }
 
 ion-label {
@@ -32,7 +29,7 @@ ion-grid {
 }
 
 hr {
-    border-bottom: 1px solid $lightergray;
+    border-bottom: 1px solid #adacac;
     margin: 1.5vh 5%;
     width: 90%;
 }
