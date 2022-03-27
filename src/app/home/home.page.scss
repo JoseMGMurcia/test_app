@@ -31,9 +31,29 @@ ion-content {
 }
 
 ion-img {
-  max-width: 50%;
-  max-width: 25%;
-  margin-left: 25%;
+  margin: auto;
+  margin-bottom: 2em;
+	
+  /* Image crop */
+	object-fit: cover;
+  width: 11em;
+	height: 8em;
+  object-position: 3em;
+
+  /* position rectification */
+  position: relative;
+  left: -2.5em;
+}
+
+.login{
+  margin: 5%;
+  min-width: 320px;
   align-self: center;
-  margin-bottom: 10%;
+}
+
+/* Large devices breakpoint (960px and up) */
+@media only screen and (min-width: 960px) {
+  .login{
+    max-width: 864px;
+  }
 }
