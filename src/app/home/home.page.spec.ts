@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from '../app.component';
+
 import { HomePage } from './home.page';
 
 describe('HomePage', () => {
