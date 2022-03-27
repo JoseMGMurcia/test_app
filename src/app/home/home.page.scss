@@ -25,3 +25,15 @@
 #container a {
   text-decoration: none;
 }
+
+ion-content {
+  --background: url(/assets/images/background.jpg) no-repeat;
+}
+
+ion-img {
+  max-width: 50%;
+  max-width: 25%;
+  margin-left: 25%;
+  align-self: center;
+  margin-bottom: 10%;
+}

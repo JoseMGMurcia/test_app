@@ -1,0 +1,50 @@
+@use '/app/styles/variables'
+$gray: #444444;
+$lgray: #888888;
+$lightergray: #adacac;
+
+.main {
+    color: $gray;
+    background-color: $white;
+    text-align: start;
+}
+
+.loginButton {
+    text-transform: none;
+    min-height: 3.5em;
+    margin: 0%;
+    margin-top: 1.5vh;
+    --border-radius: 0px;
+}
+
+ion-icon {
+    margin-left: 5%;
+    align-self: center;
+    color: $lgray;
+}
+
+ion-label {
+    margin-left: 6%;
+}
+
+ion-grid {
+    padding-top: 0.75em;
+}
+
+hr {
+    border-bottom: 1px solid $lightergray;
+    margin: 1.5vh 5%;
+    width: 90%;
+}
+
+.centered{
+    align-items: center;
+}
+
+ion-toggle {
+    --background: #c9c9c9;
+    --background-checked: #c9c9c9;
+  
+    --handle-background: #888888;
+    --handle-background-checked: #333333;
+}
