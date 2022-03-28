@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { createTranslateLoader } from './utils/translator.utils';
+import { FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,10 +25,7 @@ import { createTranslateLoader } from './utils/translator.utils';
       },
     })
   ],
-  exports: [
-    TranslateModule
-  ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, FormBuilder],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

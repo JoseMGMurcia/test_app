@@ -2,5 +2,9 @@
   "PASSWORD": "Password",
   "MAIL": "Email",
   "REMEMBER": "Remember",
-  "ACCESS": "Access"
+  "ACCESS": "Access",
+  "REQUIRED": {
+    "MAIL": "* A valid email is required.",
+    "PASS": "* A 5 characters password is required."
+  }
 }
