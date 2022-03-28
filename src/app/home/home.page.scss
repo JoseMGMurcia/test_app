@@ -1,6 +1,7 @@
+@use '../styles/variables.scss' as *;
+
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -26,11 +27,19 @@
   text-decoration: none;
 }
 
-ion-content {
-  --background: url(/assets/images/background.jpg) no-repeat;
+#appContent {
+  --background: url(/assets/images/background.jpg) no-repeat center;
 }
 
-ion-img {
+#login{
+  margin: auto;
+  min-width: 320px;
+  max-width: 440px;
+  align-self: center;
+  padding-top: 2em;
+}
+
+#login #logo {
   margin: auto;
   margin-bottom: 2em;
 	
@@ -42,18 +51,13 @@ ion-img {
 
   /* position rectification */
   position: relative;
-  left: -2.5em;
-}
-
-.login{
-  margin: 5%;
-  min-width: 320px;
-  align-self: center;
+  left: -1.5em;
 }
 
 /* Large devices breakpoint (960px and up) */
 @media only screen and (min-width: 960px) {
-  .login{
-    max-width: 864px;
+  #login{
+    background-color: $backgroundLight;
   }
+
 }

@@ -1,12 +1,12 @@
 @use '../styles/variables.scss' as *;
 
-.main {
+#main {
     color: #444444;
-    background-color: $white;
+    background-color: $backgroundLight;
     text-align: start;
 }
 
-.loginButton {
+#loginButton {
     text-transform: none;
     min-height: 3.5em;
     margin: 0%;
@@ -15,13 +15,13 @@
 }
 
 ion-icon {
-    margin-left: 5%;
+    margin-left: $marginSmall;
     align-self: center;
     color: #888888;
 }
 
 ion-label {
-    margin-left: 6%;
+    margin-left:  $marginSmall +1%;
 }
 
 ion-grid {
@@ -30,7 +30,7 @@ ion-grid {
 
 hr {
     border-bottom: 1px solid #adacac;
-    margin: 1.5vh 5%;
+    margin: 1.5vh  $marginSmall;
     width: 90%;
 }
 
@@ -45,3 +45,21 @@ ion-toggle {
     --handle-background: #888888;
     --handle-background-checked: #333333;
 }
+
+.error{
+    font-size: $small;
+    color: $alert;
+}
+
+/* Large devices breakpoint (960px and up) */
+@media only screen and (min-width: 960px) {
+ 
+    #main #loginButton {
+      text-transform: none;
+      min-height: 3.5em;
+      width: 40%;
+      margin: auto;
+      margin-bottom: 2vh;
+      --border-radius: 25px;
+  }
+  }
