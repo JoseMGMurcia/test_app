@@ -6,19 +6,16 @@ describe('StorageService', () => {
   let service: StorageService;
 
   beforeEach(() => {
-
     const storageIonicMock: any = {
-      get: () => new Promise<any>((resolve, reject) => resolve('Demo Test User')),
-      set: () => new Promise<any>((resolve, reject) => resolve('Demo Test User')),
-     };
+      get: () =>
+        new Promise<any>((resolve, reject) => resolve('Demo Test User')),
+      set: () =>
+        new Promise<any>((resolve, reject) => resolve('Demo Test User')),
+    };
 
-     TestBed.configureTestingModule({
-      imports: [
-        IonicStorageModule.forRoot()
-      ],
-      providers: [
-        StorageService
-      ]
+    TestBed.configureTestingModule({
+      imports: [IonicStorageModule.forRoot()],
+      providers: [StorageService],
     });
     service = TestBed.inject(StorageService);
   });

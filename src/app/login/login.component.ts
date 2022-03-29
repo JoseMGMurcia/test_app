@@ -14,27 +14,27 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public formBuilder: FormBuilder,
-    public storage: StorageService,
-    ) {}
+    public storage: StorageService
+  ) {}
   async ngOnInit() {
     this.isSubmited = false;
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(5)]],
-      remember: [false]
+      remember: [false],
     });
     await this.setInittialFormValues();
   }
 
-  submitLogin(){
+  submitLogin() {
     this.isSubmited = true;
-    if(this.loginForm.controls.email.valid){
+    if (this.loginForm.controls.email.valid) {
       console.log('OK');
       // Save credentials or delete it.
-      if(this.loginForm.controls.remember.value){
+      if (this.loginForm.controls.remember.value) {
         this.storage.set(MAIL_KEY, this.loginForm.controls.email.value);
         this.storage.set(PASS_KEY, this.loginForm.controls.password.value);
-      }else{
+      } else {
         this.storage.remove(MAIL_KEY);
         this.storage.remove(PASS_KEY);
       }
@@ -52,6 +52,8 @@ export class LoginComponent implements OnInit {
     // Setting the values
     this.loginForm.controls.email.setValue(savedEmail ? savedEmail : '');
     this.loginForm.controls.password.setValue(savedPass ? savedPass : '');
-    this.loginForm.controls.remember.setValue(savedPass && savedEmail ? true : false);
+    this.loginForm.controls.remember.setValue(
+      savedPass && savedEmail ? true : false
+    );
   }
 }

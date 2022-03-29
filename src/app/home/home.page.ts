@@ -9,7 +9,7 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class HomePage {
   app: AppComponent;
-  constructor(app: AppComponent, public  ts: TranslateService) {
+  constructor(app: AppComponent, public ts: TranslateService) {
     this.app = app;
   }
 }

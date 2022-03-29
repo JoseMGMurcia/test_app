@@ -26,9 +26,13 @@ import { IonicStorageModule } from '@ionic/storage-angular';
         useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
-    })
+    }),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, FormBuilder, StorageService],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FormBuilder,
+    StorageService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

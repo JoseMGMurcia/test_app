@@ -24,9 +24,6 @@ import { LoginComponent } from '../login/login.component';
       },
     }),
   ],
-  declarations: [
-    HomePage,
-    LoginComponent
-  ]
+  declarations: [HomePage, LoginComponent],
 })
 export class HomePageModule {}

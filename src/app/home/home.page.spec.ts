@@ -11,17 +11,9 @@ describe('HomePage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        HomePage
-      ],
-      imports: [
-        IonicModule.forRoot(),
-        TranslateModule.forRoot()
-      ],
-      providers:[
-        AppComponent
-      ]
+      declarations: [AppComponent, HomePage],
+      imports: [IonicModule.forRoot(), TranslateModule.forRoot()],
+      providers: [AppComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);

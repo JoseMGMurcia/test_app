@@ -2,7 +2,7 @@
 
 .appContent {
   --background: url(/assets/images/background.jpg) no-repeat;
-  background-color: map-get($colors , "dark");
+  background-color: map-get($colors, 'dark');
 }
 
 .login {
@@ -18,7 +18,7 @@
   margin: auto;
   margin-bottom: 2em;
   width: 8em;
-	height: 8em;
+  height: 8em;
 }
 
 .login .logo {
@@ -30,7 +30,7 @@
 
 .login .title {
   margin: auto;
-  color: map-get($colors , "dark");
+  color: map-get($colors, 'dark');
   display: none;
 }
 
@@ -38,7 +38,7 @@
 @media only screen and (min-width: 960px) {
   .login {
     margin-top: 15vh;
-    background-color: map-get($colors , "backgroundLight");
+    background-color: map-get($colors, 'backgroundLight');
   }
 
   .login .frame {

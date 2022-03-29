@@ -11,13 +11,13 @@ describe('LoginComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
+      declarations: [LoginComponent],
       imports: [
         IonicModule.forRoot(),
         TranslateModule.forRoot(),
         IonicStorageModule.forRoot(),
         ReactiveFormsModule,
-      ]
+      ],
     }).compileComponents();
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
