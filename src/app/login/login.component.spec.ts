@@ -27,4 +27,18 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('submitLogin shold call storage.remove', () => {
+    // Arrange
+    spyOnProperty(component.loginForm, 'valid').and.returnValue(true);
+    spyOn(component.storage, 'remove');
+
+    // Act
+    component.submitLogin();
+
+    // Assert
+    expect(component.isSubmited).toBeTruthy();
+    expect(component.storage.remove).toHaveBeenCalled();
+    expect(component.loginForm.controls).toBeTruthy();
+  });
 });
