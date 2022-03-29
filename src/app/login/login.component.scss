@@ -19,10 +19,10 @@
   margin-left: $marginSmall;
   align-self: center;
   color: map-get($colors, 'lightText');
-  font-size: 1.25em;
+  font-size: $text-large;
 }
 
-ion-label {
+.remember-text {
   margin-left: $marginSmall + 1%;
 }
 
@@ -45,18 +45,31 @@ ion-label {
 }
 
 .error {
-  font-size: $Text-small;
+  font-size: $text-small;
   color: map-get($colors, 'alertText');
 }
 
 /* Large devices breakpoint (960px and up) */
 @media only screen and (min-width: 960px) {
   .main .loginButton {
-    min-height: 3.5em;
-    width: 40%;
-    margin: auto;
-    margin-bottom: 2vh;
-    --border-radius: 25px;
+    // Position
+    margin: 2.5vh auto;
+
+    // Dimensions
+    min-height: 2.5em;
+    width: 45%;
+
+    // Text
+    font-size: $text-large;
     color: map-get($colors, 'dark');
+
+    // Button color
+    --background: #fff;
+    
+    // Border
+    --border-radius: 25px;
+    --border-width: 0.15em;
+    --border-style: solid;
+    --border-color: #1877c5;
   }
 }
