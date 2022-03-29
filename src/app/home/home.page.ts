@@ -9,9 +9,7 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class HomePage {
   app: AppComponent;
-  private ts: TranslateService;
-  constructor(app: AppComponent) {
+  constructor(app: AppComponent, public ts: TranslateService) {
     this.app = app;
-    this.ts = app.translate;
   }
 }

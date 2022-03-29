@@ -1,8 +1,15 @@
-<ion-content [fullscreen]="true" no-scroll padding>
+<ion-content [fullscreen]="true" class="appContent" no-scroll padding>
   <ion-grid>
     <ion-row>
       <ion-col class="login">
-        <ion-img src="../../assets/images/logo.jpg"></ion-img>
+        <div class="frame">
+          <ion-img src="../../assets/images/logo.jpg" class="logo"></ion-img>
+        </div>
+        <ion-row>
+          <ion-text class="title">
+            <h3>{{ "TEST" | translate }}</h3>
+          </ion-text>
+        </ion-row>
         <app-login></app-login>
       </ion-col>
     </ion-row>

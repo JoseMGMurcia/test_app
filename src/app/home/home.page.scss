@@ -1,59 +1,55 @@
-#container {
-  text-align: center;
+@use '../styles/variables.scss' as *;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-ion-content {
+.appContent {
   --background: url(/assets/images/background.jpg) no-repeat;
+  background-color: map-get($colors, 'dark');
 }
 
-ion-img {
+.login {
+  margin: auto;
+  min-width: $popup-min-width;
+  max-width: $popup-max-width;
+  align-self: center;
+  padding-top: 2em;
+  margin-top: 2vh;
+}
+
+.login .frame {
   margin: auto;
   margin-bottom: 2em;
-	
-  /* Image crop */
-	object-fit: cover;
-  width: 11em;
-	height: 8em;
-  object-position: 3em;
-
-  /* position rectification */
-  position: relative;
-  left: -2.5em;
+  width: 8em;
+  height: 8em;
 }
 
-.login{
-  margin: 5%;
-  min-width: 320px;
-  align-self: center;
+.login .logo {
+  /* crop image */
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.login .title {
+  margin: auto;
+  color: map-get($colors, 'dark');
+  display: none;
 }
 
 /* Large devices breakpoint (960px and up) */
 @media only screen and (min-width: 960px) {
-  .login{
-    max-width: 864px;
+  .login {
+    margin-top: 15vh;
+    background-color: map-get($colors, 'backgroundLight');
+  }
+
+  .login .frame {
+    margin-bottom: 1em;
+  }
+
+  .login .title {
+    display: block;
+  }
+
+  .appContent {
+    --background: url(/assets/images/background.jpg) no-repeat center top;
   }
 }

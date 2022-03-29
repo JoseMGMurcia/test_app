@@ -1,47 +1,75 @@
 @use '../styles/variables.scss' as *;
 
 .main {
-    color: #444444;
-    background-color: $white;
-    text-align: start;
+  color: map-get($colors, 'primaryText');
+  background-color: map-get($colors, 'backgroundLight');
+  text-align: start;
+  padding-top: 0.75em;
 }
 
-.loginButton {
-    text-transform: none;
-    min-height: 3.5em;
-    margin: 0%;
-    margin-top: 1.5vh;
-    --border-radius: 0px;
+.main .loginButton {
+  text-transform: none;
+  min-height: 3.5em;
+  margin: 0%;
+  margin-top: 1.5vh;
+  --border-radius: 0px;
 }
 
-ion-icon {
-    margin-left: 5%;
-    align-self: center;
-    color: #888888;
+.login-icon {
+  margin-left: $marginSmall;
+  align-self: center;
+  color: map-get($colors, 'lightText');
+  font-size: $text-large;
 }
 
-ion-label {
-    margin-left: 6%;
+.remember-text {
+  margin-left: $marginSmall + 1%;
 }
 
-ion-grid {
-    padding-top: 0.75em;
+.separator {
+  border-bottom: 1px solid map-get($colors, 'mediumShadow');
+  margin: 1.5vh $marginSmall;
+  width: 90%;
 }
 
-hr {
-    border-bottom: 1px solid #adacac;
-    margin: 1.5vh 5%;
-    width: 90%;
+.centered {
+  align-items: center;
 }
 
-.centered{
-    align-items: center;
+.remember {
+  --background: #c9c9c9;
+  --background-checked: #c9c9c9;
+
+  --handle-background: #888888;
+  --handle-background-checked: #333333;
 }
 
-ion-toggle {
-    --background: #c9c9c9;
-    --background-checked: #c9c9c9;
-  
-    --handle-background: #888888;
-    --handle-background-checked: #333333;
+.error {
+  font-size: $text-small;
+  color: map-get($colors, 'alertText');
+}
+
+/* Large devices breakpoint (960px and up) */
+@media only screen and (min-width: 960px) {
+  .main .loginButton {
+    // Position
+    margin: 2.5vh auto;
+
+    // Dimensions
+    min-height: 2.5em;
+    width: 45%;
+
+    // Text
+    font-size: $text-large;
+    color: map-get($colors, 'dark');
+
+    // Button color
+    --background: #fff;
+    
+    // Border
+    --border-radius: 25px;
+    --border-width: 0.15em;
+    --border-style: solid;
+    --border-color: #1877c5;
+  }
 }

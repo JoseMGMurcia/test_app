@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { createTranslateLoader } from './utils/translator.utils';
+import { FormBuilder } from '@angular/forms';
+import { StorageService } from './services/storage/storage.service';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,18 +19,20 @@ import { createTranslateLoader } from './utils/translator.utils';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
-    })
+    }),
   ],
-  exports: [
-    TranslateModule
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FormBuilder,
+    StorageService,
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
