@@ -29,14 +29,6 @@ describe('StorageService', () => {
     expect(storage).toBeTruthy();
   });
 
-  it('in a async scope get should return the setted value', waitForAsync(async () => {
-    // Act
-    const response = await service.get(KEY);
-
-    // Asert
-    expect(response).toEqual(VALUE);
-  }));
-
   it('get should return a Promise', () => {
     // Act
     const response = service.get(KEY);
