@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   submitLogin() {
     this.isSubmited = true;
-    if (this.loginForm.controls.email.valid) {
+    if (this.loginForm.valid) {
       console.log('OK');
       // Save credentials or delete it.
       if (this.loginForm.controls.remember.value) {
