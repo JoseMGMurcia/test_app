@@ -44,4 +44,5 @@ describe('StorageService', () => {
     // Asert
     expect(response).toBeInstanceOf(Promise);
   });
+
 });
