@@ -1,63 +1,55 @@
 @use '../styles/variables.scss' as *;
 
-#container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.appContent {
+  --background: url(/assets/images/background.jpg) no-repeat;
+  background-color: map-get($colors , "dark");
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-#appContent {
-  --background: url(/assets/images/background.jpg) no-repeat center;
-}
-
-#login{
+.login {
   margin: auto;
-  min-width: 320px;
-  max-width: 440px;
+  min-width: $popup-min-width;
+  max-width: $popup-max-width;
   align-self: center;
   padding-top: 2em;
+  margin-top: 2vh;
 }
 
-#login #logo {
+.login .frame {
   margin: auto;
   margin-bottom: 2em;
-	
-  /* Image crop */
-	object-fit: cover;
-  width: 11em;
+  width: 8em;
 	height: 8em;
-  object-position: 3em;
+}
 
-  /* position rectification */
-  position: relative;
-  left: -1.5em;
+.login .logo {
+  /* crop image */
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.login .title {
+  margin: auto;
+  color: map-get($colors , "dark");
+  display: none;
 }
 
 /* Large devices breakpoint (960px and up) */
 @media only screen and (min-width: 960px) {
-  #login{
-    background-color: $backgroundLight;
+  .login {
+    margin-top: 15vh;
+    background-color: map-get($colors , "backgroundLight");
   }
 
+  .login .frame {
+    margin-bottom: 1em;
+  }
+
+  .login .title {
+    display: block;
+  }
+
+  .appContent {
+    --background: url(/assets/images/background.jpg) no-repeat center top;
+  }
 }

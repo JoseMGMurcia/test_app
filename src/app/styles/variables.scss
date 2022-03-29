@@ -1,9 +1,21 @@
 // Colors
-$backgroundLight: #fff;
-$alert: #5e0303;
+$colors: (
+    "alertText"         : #5e0303,
+    "backgroundLight"   : #fffff0,
+    "dark"              : #1a1919,
+    "primaryText"       : #444444,
+    "lightText"         : #888888,
+    "mediumShadow"      : #adacac,
+    "lightShadow"       : #c9c9c9
+);
+
 
 // Test sizes
-$small: 0.85em;
+$Text-small: 0.85em;
 
 // Margins
-$marginSmall: 5%
+$marginSmall: 5%;
+
+// Popup dimensions
+$popup-min-width: 320px;
+$popup-max-width: 440px;

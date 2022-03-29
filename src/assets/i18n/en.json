@@ -6,5 +6,6 @@
   "REQUIRED": {
     "MAIL": "* A valid email is required.",
     "PASS": "* A 5 characters password is required."
-  }
+  },
+  "TEST": "Technical test"
 }

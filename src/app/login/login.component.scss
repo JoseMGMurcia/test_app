@@ -1,12 +1,13 @@
 @use '../styles/variables.scss' as *;
 
-#main {
-    color: #444444;
-    background-color: $backgroundLight;
+.main{
+    color: map-get($colors , "primaryText");
+    background-color: map-get($colors , "backgroundLight");
     text-align: start;
+    padding-top: 0.75em;
 }
-
-#loginButton {
+    
+.main .loginButton {
     text-transform: none;
     min-height: 3.5em;
     margin: 0%;
@@ -14,22 +15,19 @@
     --border-radius: 0px;
 }
 
-ion-icon {
+.login-icon {
     margin-left: $marginSmall;
     align-self: center;
-    color: #888888;
+    color:  map-get($colors , "lightText");
+    font-size: 1.25em;
 }
 
 ion-label {
     margin-left:  $marginSmall +1%;
 }
 
-ion-grid {
-    padding-top: 0.75em;
-}
-
-hr {
-    border-bottom: 1px solid #adacac;
+.separator {
+    border-bottom: 1px solid map-get($colors , "mediumShadow");
     margin: 1.5vh  $marginSmall;
     width: 90%;
 }
@@ -38,7 +36,7 @@ hr {
     align-items: center;
 }
 
-ion-toggle {
+.remember {
     --background: #c9c9c9;
     --background-checked: #c9c9c9;
   
@@ -47,19 +45,19 @@ ion-toggle {
 }
 
 .error{
-    font-size: $small;
-    color: $alert;
+    font-size: $Text-small;
+    color: map-get($colors , "alertText");
 }
 
 /* Large devices breakpoint (960px and up) */
 @media only screen and (min-width: 960px) {
  
-    #main #loginButton {
-      text-transform: none;
-      min-height: 3.5em;
-      width: 40%;
-      margin: auto;
-      margin-bottom: 2vh;
-      --border-radius: 25px;
-  }
-  }
+    .main .loginButton {
+        min-height: 3.5em;
+        width: 40%;
+        margin: auto;
+        margin-bottom: 2vh;
+        --border-radius: 25px;
+        color: map-get($colors , "dark");
+    }
+}
