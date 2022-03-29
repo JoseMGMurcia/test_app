@@ -9,12 +9,15 @@ describe('StorageService', () => {
   const VALUE = 'VALUE';
 
   beforeEach(() => {
+
     TestBed.configureTestingModule({
       imports: [IonicStorageModule.forRoot()],
       providers: [StorageService],
     });
     service = TestBed.inject(StorageService);
+
     service.set(KEY, VALUE);
+
   });
 
   it('should be created', () => {
@@ -52,4 +55,5 @@ describe('StorageService', () => {
     // Asert
     expect(response).toBeInstanceOf(Promise);
   });
+
 });
