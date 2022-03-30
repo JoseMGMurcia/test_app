@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   submitLogin() {
     this.isSubmited = true;
     if (this.loginForm.valid){
-      // Tell the user the OK result 
+      // Tell the user OK result
       this.toast.create({
         message: 'OK',
         duration: 1800
