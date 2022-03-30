@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastController } from '@ionic/angular';
 import { MAIL_KEY, PASS_KEY } from '../const';
 import { StorageService } from '../services/storage/storage.service';
 
@@ -14,8 +15,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public formBuilder: FormBuilder,
-    public storage: StorageService
-  ) {}
+    public storage: StorageService,
+    private toast: ToastController
+  ) { }
   async ngOnInit() {
     this.isSubmited = false;
     this.loginForm = this.formBuilder.group({
@@ -28,8 +30,14 @@ export class LoginComponent implements OnInit {
 
   submitLogin() {
     this.isSubmited = true;
-    if (this.loginForm.valid) {
-      console.log('OK');
+    if (this.loginForm.valid){
+      // Tell the user the OK result 
+      this.toast.create({
+        message: 'OK',
+        duration: 1800
+      }).then((toastRes) => {
+        toastRes.present();
+      });
       // Save credentials or delete it.
       if (this.loginForm.controls.remember.value) {
         this.storage.set(MAIL_KEY, this.loginForm.controls.email.value);
