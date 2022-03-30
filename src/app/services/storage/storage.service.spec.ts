@@ -22,7 +22,7 @@ describe('StorageService', () => {
   });
 
   it('should be manually created', () => {
-    // Arrange
+    // Act
     const storage: StorageService = new StorageService(new Storage());
 
     // Assert

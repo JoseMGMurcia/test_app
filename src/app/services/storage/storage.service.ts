@@ -10,8 +10,7 @@ export class StorageService {
   }
 
   async init() {
-    const storage = await this.storage.create();
-    this.storage = storage;
+    this.storage = await this.storage.create();
   }
 
   /**
@@ -42,7 +41,7 @@ export class StorageService {
    * @param key
    * @returns
    */
-  public remove(key: string) {
-    return this.storage.remove(key);
+  public async remove(key: string) {
+    return await this.storage.remove(key);
   }
 }

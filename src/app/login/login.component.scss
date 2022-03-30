@@ -5,16 +5,15 @@
   background-color: map-get($colors, 'backgroundLight');
   text-align: start;
   padding-top: 0.75em;
-}
 
-.main .loginButton {
-  text-transform: none;
-  min-height: 3.5em;
-  margin: 0%;
-  margin-top: 1.5vh;
-  --border-radius: 0px;
+  .loginButton {
+    text-transform: none;
+    min-height: 3.5em;
+    margin: 0%;
+    margin-top: 1.5vh;
+    --border-radius: 0px;
+  }
 }
-
 .login-icon {
   margin-left: $marginSmall;
   align-self: center;
@@ -51,25 +50,27 @@
 
 /* Large devices breakpoint (960px and up) */
 @media only screen and (min-width: 960px) {
-  .main .loginButton {
-    // Position
-    margin: 2.5vh auto;
+  .main {
+    .loginButton {
+      // Position
+      margin: 2.5vh auto;
 
-    // Dimensions
-    min-height: 2.5em;
-    width: 45%;
+      // Dimensions
+      min-height: 2.5em;
+      width: 45%;
 
-    // Text
-    font-size: $text-large;
-    color: map-get($colors, 'dark');
+      // Text
+      font-size: $text-large;
+      color: map-get($colors, 'dark');
 
-    // Button color
-    --background: #fff;
+      // Button color
+      --background: #fff;
 
-    // Border
-    --border-radius: 25px;
-    --border-width: 0.15em;
-    --border-style: solid;
-    --border-color: #1877c5;
+      // Border
+      --border-radius: 25px;
+      --border-width: 0.15em;
+      --border-style: solid;
+      --border-color: #1877c5;
+    }
   }
 }
