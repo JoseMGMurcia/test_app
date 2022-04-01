@@ -12,41 +12,45 @@
   align-self: center;
   padding-top: 2em;
   margin-top: 2vh;
+
+
+  .frame {
+    margin: auto;
+    margin-bottom: 2em;
+    width: 8em;
+    height: 8em;
+  }
+
+  .logo {
+    /* crop image */
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  .title {
+    margin: auto;
+    color: map-get($colors, 'dark');
+    display: none;
+  }
 }
 
-.login .frame {
-  margin: auto;
-  margin-bottom: 2em;
-  width: 8em;
-  height: 8em;
-}
 
-.login .logo {
-  /* crop image */
-  height: 100%;
-  object-fit: cover;
-  object-position: left;
-}
-
-.login .title {
-  margin: auto;
-  color: map-get($colors, 'dark');
-  display: none;
-}
 
 /* Large devices breakpoint (960px and up) */
 @media only screen and (min-width: 960px) {
+
   .login {
     margin-top: 15vh;
     background-color: map-get($colors, 'backgroundLight');
-  }
 
-  .login .frame {
-    margin-bottom: 1em;
-  }
+    .frame {
+      margin-bottom: 1em;
+    }
 
-  .login .title {
-    display: block;
+    .title {
+      display: block;
+    }
   }
 
   .appContent {
