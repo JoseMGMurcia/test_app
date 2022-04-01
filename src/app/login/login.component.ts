@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
   submitLogin() {
     this.isSubmited = true;
     if (this.loginForm.valid){
+
       // Tell user OK result
       this.toast.create({
         message: 'OK',
@@ -55,6 +56,7 @@ export class LoginComponent implements OnInit {
       });
     } else {
       this.storage.remove(SAVED_USER);
+
     }
   }
 
