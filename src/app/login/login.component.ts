@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
-import { MAIL_KEY, PASS_KEY } from '../const';
+import { SAVED_USER } from '../const';
 import { StorageService } from '../services/storage/storage.service';
 
 @Component({
@@ -18,34 +18,43 @@ export class LoginComponent implements OnInit {
     public storage: StorageService,
     private toast: ToastController
   ) { }
+
   async ngOnInit() {
+    this.init();
+    this.setInittialFormValues();
+  }
+
+  private init() {
     this.isSubmited = false;
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(5)]],
       remember: [false],
     });
-    await this.setInittialFormValues();
   }
 
   submitLogin() {
     this.isSubmited = true;
     if (this.loginForm.valid){
-      // Tell the user OK result
+      // Tell user OK result
       this.toast.create({
         message: 'OK',
         duration: 1800
       }).then((toastRes) => {
         toastRes.present();
       });
-      // Save credentials or delete it.
-      if (this.loginForm.controls.remember.value) {
-        this.storage.set(MAIL_KEY, this.loginForm.controls.email.value);
-        this.storage.set(PASS_KEY, this.loginForm.controls.password.value);
-      } else {
-        this.storage.remove(MAIL_KEY);
-        this.storage.remove(PASS_KEY);
-      }
+      this.saveOrRemoveCredentials();
+    }
+  }
+
+  private saveOrRemoveCredentials() {
+    if (this.loginForm.controls.remember.value) {
+      this.storage.set(SAVED_USER, {
+        email: this.loginForm.controls.email.value,
+        password: this.loginForm.controls.password.value
+      });
+    } else {
+      this.storage.remove(SAVED_USER);
     }
   }
 
@@ -53,15 +62,14 @@ export class LoginComponent implements OnInit {
    * Write saved values to the form.
    */
   private async setInittialFormValues() {
-    // Reading the values
-    const savedEmail = await this.storage.get(MAIL_KEY);
-    const savedPass = await this.storage.get(PASS_KEY);
+    // Reading the saved values
+    const savedValues = await this.storage.get(SAVED_USER);
 
     // Setting the values
-    this.loginForm.controls.email.setValue(savedEmail ? savedEmail : '');
-    this.loginForm.controls.password.setValue(savedPass ? savedPass : '');
+    this.loginForm.controls.email.setValue(savedValues?.email ?? '');
+    this.loginForm.controls.password.setValue(savedValues?.password ?? '');
     this.loginForm.controls.remember.setValue(
-      savedPass && savedEmail ? true : false
+      savedValues?.password
     );
   }
 }
