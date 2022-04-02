@@ -26,17 +26,4 @@ describe('AppComponent', () => {
     expect(app.translate).toBeDefined();
   });
 
-  it('translator should translate a string using a key', () => {
-    // Arrange
-    app.translate.setTranslation(AVALIABLE_LANGUAJES[0], {
-      text: 'Translated text',
-    });
-    app.translate.use(AVALIABLE_LANGUAJES[0]);
-
-    // Act
-    const translatedText = app.translate.instant('text');
-
-    // Assert
-    expect(translatedText).toEqual('Translated text');
-  });
 });
