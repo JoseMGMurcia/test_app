@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
   submitLogin() {
     this.isSubmited = true;
     if (this.loginForm.valid){
-
       // Tell user OK result
       this.toast.create({
         message: 'OK',
@@ -56,7 +55,6 @@ export class LoginComponent implements OnInit {
       });
     } else {
       this.storage.remove(SAVED_USER);
-
     }
   }
 
@@ -68,10 +66,10 @@ export class LoginComponent implements OnInit {
     const savedValues = await this.storage.get(SAVED_USER);
 
     // Setting the values
-    this.loginForm.controls.email.setValue(savedValues?.email ? savedValues?.email : '');
-    this.loginForm.controls.password.setValue(savedValues?.password ? savedValues?.password : '');
+    this.loginForm.controls.email.setValue(savedValues?.email ?? '');
+    this.loginForm.controls.password.setValue(savedValues?.password ?? '');
     this.loginForm.controls.remember.setValue(
-      savedValues?.password && savedValues?.password ? true : false
+      savedValues?.password
     );
   }
 }
