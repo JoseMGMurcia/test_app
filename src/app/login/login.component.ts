@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     public formBuilder: FormBuilder,
     public storage: StorageService,
     private toast: ToastController
-  ) { }
+  ) {}
 
   async ngOnInit() {
     this.init();
@@ -26,14 +26,16 @@ export class LoginComponent implements OnInit {
 
   submitLogin() {
     this.isSubmited = true;
-    if (this.loginForm.valid){
+    if (this.loginForm.valid) {
       // Tell user OK result
-      this.toast.create({
-        message: 'OK',
-        duration: 1800
-      }).then((toastRes) => {
-        toastRes.present();
-      });
+      this.toast
+        .create({
+          message: 'OK',
+          duration: 1800,
+        })
+        .then((toastRes) => {
+          toastRes.present();
+        });
       this.saveOrRemoveCredentials();
     }
   }
@@ -51,7 +53,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.controls.remember.value) {
       this.storage.set(SAVED_USER, {
         email: this.loginForm.controls.email.value,
-        password: this.loginForm.controls.password.value
+        password: this.loginForm.controls.password.value,
       });
     } else {
       this.storage.remove(SAVED_USER);

@@ -11,7 +11,7 @@ describe('HomePage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePage],
+      declarations: [HomePage],
       imports: [IonicModule.forRoot(), TranslateModule.forRoot()],
     }).compileComponents();
 

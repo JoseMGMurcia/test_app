@@ -13,7 +13,6 @@
   padding-top: 2em;
   margin-top: 2vh;
 
-
   .frame {
     margin: auto;
     margin-bottom: 2em;
@@ -35,11 +34,8 @@
   }
 }
 
-
-
 /* Large devices breakpoint (960px and up) */
 @media only screen and (min-width: 960px) {
-
   .login {
     margin-top: 15vh;
     background-color: map-get($colors, 'backgroundLight');

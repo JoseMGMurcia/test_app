@@ -7,7 +7,5 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(
-    public translateService: TranslateService) {
-  }
+  constructor(public translateService: TranslateService) {}
 }

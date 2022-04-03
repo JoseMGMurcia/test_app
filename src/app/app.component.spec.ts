@@ -25,5 +25,4 @@ describe('AppComponent', () => {
   it('should inicialice translatemodule', () => {
     expect(app.translate).toBeDefined();
   });
-
 });

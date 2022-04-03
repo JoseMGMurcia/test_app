@@ -60,5 +60,4 @@ describe('StorageService', () => {
     // Asert
     expect(response).toBeUndefined();
   });
-
 });
