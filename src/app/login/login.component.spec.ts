@@ -87,7 +87,6 @@ describe('LoginComponent', () => {
       remember: true
     });
     component.submitLogin();
-    //Assert
 
     expect(saveOrRemoveSpy).toHaveBeenCalled();
   });
