@@ -8,6 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomePage {
   constructor(
-    public translateService: TranslateService) {    
+    public translateService: TranslateService) {
   }
 }

@@ -24,15 +24,6 @@ export class LoginComponent implements OnInit {
     this.setInittialFormValues();
   }
 
-  private init() {
-    this.isSubmited = false;
-    this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(5)]],
-      remember: [false],
-    });
-  }
-
   submitLogin() {
     this.isSubmited = true;
     if (this.loginForm.valid){
@@ -45,6 +36,15 @@ export class LoginComponent implements OnInit {
       });
       this.saveOrRemoveCredentials();
     }
+  }
+
+  private init() {
+    this.isSubmited = false;
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
+      remember: [false],
+    });
   }
 
   private saveOrRemoveCredentials() {
@@ -68,8 +68,6 @@ export class LoginComponent implements OnInit {
     // Setting the values
     this.loginForm.controls.email.setValue(savedValues?.email ?? '');
     this.loginForm.controls.password.setValue(savedValues?.password ?? '');
-    this.loginForm.controls.remember.setValue(
-      savedValues?.password
-    );
+    this.loginForm.controls.remember.setValue(savedValues?.password);
   }
 }

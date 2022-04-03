@@ -21,7 +21,7 @@ describe('StorageService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should be manually created', () => {
+  it('could be manually created', () => {
     // Act
     const storage: StorageService = new StorageService(new Storage());
 
@@ -43,6 +43,22 @@ describe('StorageService', () => {
 
     // Asert
     expect(response).toBeInstanceOf(Promise);
+  });
+
+  it('should return a stored key', async () => {
+    // Act
+    const response = await service.get(KEY);
+
+    // Asert
+    expect(response).toEqual(VALUE);
+  });
+
+  it('should remove a stored key', async () => {
+    // Act
+    const response = await service.remove(KEY);
+
+    // Asert
+    expect(response).toBeUndefined();
   });
 
 });
