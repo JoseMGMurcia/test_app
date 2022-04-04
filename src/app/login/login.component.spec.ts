@@ -44,19 +44,31 @@ describe('LoginComponent', () => {
     component.loginForm.setValue({
       email: 'avalidvalue@valid.com',
       password: 'enoughLeng',
-      remember: false
+      remember: false,
     });
 
     // Assert
     expect(component.loginForm.valid).toBeTruthy();
   });
 
-  it('should not validate incorrect user email', () => {
+  it('should not validate incorrect user email, remember false', () => {
     // Act
     component.loginForm.setValue({
       email: 'notValid.com',
       password: 'enoughLeng',
-      remember: false
+      remember: false,
+    });
+
+    //Assert
+    expect(component.loginForm.valid).toBeFalsy();
+  });
+
+  it('should not validate incorrect user email, remember true', () => {
+    // Act
+    component.loginForm.setValue({
+      email: 'notValid.com',
+      password: 'enoughLeng',
+      remember: true,
     });
 
     //Assert
@@ -68,7 +80,7 @@ describe('LoginComponent', () => {
     component.loginForm.setValue({
       email: 'avalidvalue@valid.com',
       password: 'not',
-      remember: false
+      remember: false,
     });
 
     //Assert
@@ -84,11 +96,10 @@ describe('LoginComponent', () => {
     component.loginForm.setValue({
       email: 'avalidvalue@valid.com',
       password: 'valispassword',
-      remember: true
+      remember: true,
     });
     component.submitLogin();
     //Assert
     expect(saveOrRemoveSpy).toHaveBeenCalled();
   });
-
 });
