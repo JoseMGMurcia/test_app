@@ -66,6 +66,7 @@ describe('LoginComponent', () => {
     component.loginForm.setValue({
       email: 'notValid.com',
       password: 'enoughLeng',
+
       remember: true,
     });
 

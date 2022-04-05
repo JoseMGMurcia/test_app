@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
       }).then((toastRes) => {
         toastRes.present();
       });
+
       this.saveOrRemoveCredentials();
     }
   }
