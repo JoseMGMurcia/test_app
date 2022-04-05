@@ -1,4 +1,4 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { StorageService } from './storage.service';
 import { Storage } from '@ionic/storage-angular';
@@ -6,7 +6,11 @@ import { Storage } from '@ionic/storage-angular';
 describe('StorageService', () => {
   let service: StorageService;
   const KEY = 'KEY';
-  const VALUE = 'VALUE';
+  const mockedCredentials = {
+    mail: 'user@componentOnReady.com',
+    password: '12345',
+    remember: false
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -14,7 +18,6 @@ describe('StorageService', () => {
       providers: [StorageService],
     });
     service = TestBed.inject(StorageService);
-    service.set(KEY, VALUE);
   });
 
   it('should be created', () => {
@@ -22,42 +25,23 @@ describe('StorageService', () => {
   });
 
   it('could be manually created', () => {
-    // Act
     const storage: StorageService = new StorageService(new Storage());
 
-    // Assert
     expect(storage).toBeTruthy();
   });
 
-  it('get should return a Promise', () => {
-    // Act
-    const response = service.get(KEY);
-
-    // Asert
-    expect(response).toBeInstanceOf(Promise);
-  });
-
-  it('remove should return a Promise', () => {
-    // Act
-    const response = service.remove(KEY);
-
-    // Asert
-    expect(response).toBeInstanceOf(Promise);
-  });
-
   it('should return a stored key', async () => {
-    // Act
+    await service.set(KEY, mockedCredentials);
     const response = await service.get(KEY);
 
-    // Asert
-    expect(response).toEqual(VALUE);
+    expect(response).toEqual(mockedCredentials);
   });
 
   it('should remove a stored key', async () => {
-    // Act
-    const response = await service.remove(KEY);
+    await service.set(KEY, mockedCredentials);
+    await service.remove(KEY);
+    const response = await service.get(KEY);
 
-    // Asert
-    expect(response).toBeUndefined();
+    expect(response).toBeNull();
   });
 });

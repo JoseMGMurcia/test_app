@@ -21,7 +21,6 @@
   }
 
   .logo {
-    /* crop image */
     height: 100%;
     object-fit: cover;
     object-position: left;
@@ -34,7 +33,6 @@
   }
 }
 
-/* Large devices breakpoint (960px and up) */
 @media only screen and (min-width: 960px) {
   .login {
     margin-top: 15vh;

@@ -27,15 +27,12 @@ export class LoginComponent implements OnInit {
   submitLogin() {
     this.isSubmited = true;
     if (this.loginForm.valid) {
-      // Tell user OK result
-      this.toast
-        .create({
-          message: 'OK',
-          duration: 1800,
-        })
-        .then((toastRes) => {
-          toastRes.present();
-        });
+      this.toast.create({
+        message: 'OK',
+        duration: 1800,
+      }).then((toastRes) => {
+        toastRes.present();
+      });
       this.saveOrRemoveCredentials();
     }
   }
@@ -60,14 +57,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  /**
-   * Write saved values to the form.
-   */
   private async setInittialFormValues() {
-    // Reading the saved values
     const savedValues = await this.storage.get(SAVED_USER);
 
-    // Setting the values
     this.loginForm.controls.email.setValue(savedValues?.email ?? '');
     this.loginForm.controls.password.setValue(savedValues?.password ?? '');
     this.loginForm.controls.remember.setValue(savedValues?.password);
