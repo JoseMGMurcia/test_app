@@ -48,25 +48,19 @@
   color: map-get($colors, 'alertText');
 }
 
-/* Large devices breakpoint (960px and up) */
 @media only screen and (min-width: 960px) {
   .main {
     .loginButton {
-      // Position
       margin: 2.5vh auto;
 
-      // Dimensions
       min-height: 2.5em;
       width: 45%;
 
-      // Text
       font-size: $text-large;
       color: map-get($colors, 'dark');
 
-      // Button color
       --background: #fff;
 
-      // Border
       --border-radius: 25px;
       --border-width: 0.15em;
       --border-style: solid;

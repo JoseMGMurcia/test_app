@@ -31,75 +31,69 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should detect when form is submited', () => {
-    // Act
+  it('should set isSubmited as true when an empty form is submited', () => {
+    component.loginForm.setValue({
+      email: '',
+      password: '',
+      remember: false,
+    });
     component.submitLogin();
 
-    // Assert
     expect(component.isSubmited).toBeTruthy();
   });
 
   it('should validate correct user credentials', () => {
-    // Act
     component.loginForm.setValue({
       email: 'avalidvalue@valid.com',
       password: 'enoughLeng',
       remember: false,
     });
 
-    // Assert
     expect(component.loginForm.valid).toBeTruthy();
   });
 
   it('should not validate incorrect user email, remember false', () => {
-    // Act
     component.loginForm.setValue({
       email: 'notValid.com',
       password: 'enoughLeng',
       remember: false,
     });
 
-    //Assert
     expect(component.loginForm.valid).toBeFalsy();
   });
 
   it('should not validate incorrect user email, remember true', () => {
-    // Act
     component.loginForm.setValue({
       email: 'notValid.com',
       password: 'enoughLeng',
+
       remember: true,
     });
 
-    //Assert
     expect(component.loginForm.valid).toBeFalsy();
   });
 
   it('should not validate a short user password', () => {
-    // Act
     component.loginForm.setValue({
       email: 'avalidvalue@valid.com',
       password: 'not',
       remember: false,
     });
 
-    //Assert
     expect(component.loginForm.valid).toBeFalsy();
   });
 
   it('should store values when remember is marked', () => {
-    // Arrange
     // @ts-ignore
     const saveOrRemoveSpy = spyOn(component, 'saveOrRemoveCredentials');
 
-    // Act
     component.loginForm.setValue({
       email: 'avalidvalue@valid.com',
       password: 'valispassword',
       remember: true,
     });
     component.submitLogin();
-    //Assert
+
     expect(saveOrRemoveSpy).toHaveBeenCalled();
   });
 });
