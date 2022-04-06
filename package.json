@@ -1,6 +1,6 @@
 {
   "name": "test_app",
-  "version": "0.0.13",
+  "version": "1.6",
   "description": "Aplication with login component using Ionic Angular-Capacitor",
   "author": "José Martínez García <josemartinezgmurcia@gmail.com>",
   "homepage": "https://github.com/JoseMGMurcia/test_app",
